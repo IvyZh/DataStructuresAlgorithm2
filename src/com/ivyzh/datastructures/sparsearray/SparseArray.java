@@ -1,4 +1,4 @@
-package com.ivyzh.datastructures;
+package com.ivyzh.datastructures.sparsearray;
 
 import java.util.Arrays;
 

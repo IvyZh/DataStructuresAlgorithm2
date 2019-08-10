@@ -3,17 +3,10 @@ package com.ivyzh.datastructures.queue;
 import java.util.Scanner;
 
 
-/**
- * 数组模拟队列
- * front == rear 【空】
- * rear  == maxSize - 1【队列满】
- * front：初始值-1，每移除一个值 front加1
- * rear：初始值-1，每增加一个值 rear后移加1
- */
-public class ArrayQueueDemo {
+public class CircleArrayQueueDemo {
     public static void main(String[] args) {
 
-        ArrayQueue queue = new ArrayQueue(3);
+        CircleArrayQueue queue = new CircleArrayQueue(3);
         char key = ' ';
         Scanner scanner = new Scanner(System.in);
         boolean looper = true;
@@ -61,22 +54,22 @@ public class ArrayQueueDemo {
     }
 
 
-    static class ArrayQueue {
+    static class CircleArrayQueue {
         int[] arr;
         int maxSize;
         int front;
         int rear;
 
-        public ArrayQueue(int maxSize) {
+        public CircleArrayQueue(int maxSize) {
             this.maxSize = maxSize;
             arr = new int[maxSize];
-            front = -1;//是队列最前元素[不含]
-            rear = -1;//是队列最后[含]
+            front = 0;//指向队列第一个元素
+            rear = 0;//指向队列最后一个元素的后一个位置
         }
 
         // 队列是否已经满
         public boolean isFull() {
-            return maxSize - 1 == rear;
+            return (rear + 1) % maxSize == front;
         }
 
         // 队列是否已经空
@@ -90,8 +83,8 @@ public class ArrayQueueDemo {
                 System.out.println("队列已满，不能添加元素");
                 return;
             }
-            rear++;//让rear后移，因为初始值是-1
             arr[rear] = ele;
+            rear = (rear + 1) % maxSize;
         }
 
         // 打印队列
@@ -102,8 +95,8 @@ public class ArrayQueueDemo {
             }
             // 打印有效值
             System.out.println("打印有效值：");
-            for (int i = front; i < rear; i++) {
-                System.out.print(arr[i + 1] + "->");
+            for (int i = front; i < front + size(); i++) {
+                System.out.print(arr[(i % maxSize)] + "->");
             }
             System.out.println();
             System.out.println("打印完整队列：");
@@ -113,6 +106,11 @@ public class ArrayQueueDemo {
             System.out.println();
         }
 
+        // 有效数据
+        private int size() {
+            return (rear + maxSize - front) % maxSize;
+        }
+
         // 查看队列头元素
         public int headQueue() {
             if (isEmpty()) {
@@ -120,7 +118,7 @@ public class ArrayQueueDemo {
                 throw new RuntimeException("这一个空队列");
             }
             // 打印有效值
-            return arr[front + 1];
+            return arr[front];
         }
 
         // 出队列操作
@@ -130,8 +128,8 @@ public class ArrayQueueDemo {
                 throw new RuntimeException("这一个空队列");
             }
             // 打印有效值
-            int value = arr[front + 1];
-            front++;
+            int value = arr[front];
+            front = (front + 1) % maxSize;
             return value;
         }
     }
