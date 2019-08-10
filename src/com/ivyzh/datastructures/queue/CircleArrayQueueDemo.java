@@ -3,6 +3,11 @@ package com.ivyzh.datastructures.queue;
 import java.util.Scanner;
 
 
+/**
+ * (rear + 1) % maxSize == front  表示满
+ * rear == front 表示空
+ * 计算队列有多个元素=(rear + maxSize - front) % maxSize
+ */
 public class CircleArrayQueueDemo {
     public static void main(String[] args) {
 
