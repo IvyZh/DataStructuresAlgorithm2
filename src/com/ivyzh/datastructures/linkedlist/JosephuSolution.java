@@ -50,7 +50,6 @@ public class JosephuSolution {
         public CircleLinkedList() {
         }
 
-
         /**
          * 构建环形列表的方法
          *
@@ -89,7 +88,6 @@ public class JosephuSolution {
             person.next = first;
         }
 
-
         public void show() {
             if (first == null) {
                 System.out.println("队列为空");
@@ -103,7 +101,6 @@ public class JosephuSolution {
 
             System.out.println();
         }
-
 
         /**
          * @param k 从第 k(1<=k<=n) 个小孩开始数数
@@ -141,10 +138,7 @@ public class JosephuSolution {
                 first = first.next;
                 helper.next = first;
             }
-
             System.out.println("最后 " + first.no + " 出圈");
-
-
         }
 
 
