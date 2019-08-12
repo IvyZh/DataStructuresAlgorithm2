@@ -20,3 +20,7 @@
 5. 双向链表（DoubleLinkedListDemo）
 
 6. 环形单向链表（JosephuSolution）
+
+7. 数组实现栈（ArrayStackDemo）
+
+7. 链表实现栈（ArrayStackDemo）
