@@ -20,7 +20,7 @@ public class ArrayStackDemo {
             System.out.println(stack.pop());
             System.out.println(stack.pop());
             System.out.println(stack.pop());
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -69,7 +69,6 @@ public class ArrayStackDemo {
             return value;
         }
 
-
         public boolean isFull() {
             return top == maxSize - 1;
         }
@@ -77,7 +76,5 @@ public class ArrayStackDemo {
         public boolean isEmpty() {
             return top == -1;
         }
-
-
     }
 }
