@@ -1,6 +1,8 @@
 package com.ivyzh.datastructures.stack.calculator;
 
 /**
+ *
+ * 栈实现综合计算器:中缀表达式
  * 运算规则（重要）
  * 依次扫描表达式每一位
  * 1.如果是数字，进入数栈

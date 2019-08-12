@@ -25,4 +25,12 @@
 
 7. 链表实现栈（ArrayStackDemo）
 
-8. 栈实现综合计算器（Calculator）
+8. 栈实现综合计算器（Calculator）中缀表达式
+    TODO:加入小括号
+9. 前缀表达式（PolanExpression）
+
+10. 后缀表达式（ReversePolishExpression）
+
+11. 中缀表达式转后缀表达式（InfixToSuffixExpression）
+
+12. 完整版的逆波兰计算器（ReversePolishCalCase）
