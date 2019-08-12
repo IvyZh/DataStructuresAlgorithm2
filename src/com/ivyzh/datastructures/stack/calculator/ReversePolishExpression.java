@@ -31,7 +31,7 @@ public class ReversePolishExpression {
         System.out.println("后缀(逆波兰)表达式[ " + expression + " ]对应的结果为：" + result);
     }
 
-    private static int calc(List<String> list) {
+    public static int calc(List<String> list) {
         Stack<String> stack = new Stack<>();
         for (String item : list) {
             if (item.matches("\\d+")) {

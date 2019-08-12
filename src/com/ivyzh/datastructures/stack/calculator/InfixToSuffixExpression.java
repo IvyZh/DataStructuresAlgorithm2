@@ -17,13 +17,9 @@ public class InfixToSuffixExpression {
         System.out.println(expression + " 对应的中序表达式List=> " + inFixList);
         List<String> suffixExpreesionList = parseSuffixExpreesionList(inFixList);//中缀表达式的List->后缀表达式List
         System.out.println(expression + " 对应的后序表达式List=> " + suffixExpreesionList);
-
-
         System.out.println("-------------------------");
-        int result = calc(suffixExpreesionList);
+        int result = ReversePolishExpression.calc(suffixExpreesionList);
         System.out.println(expression + " = " + result);
-
-
     }
 
     private static List<String> parseSuffixExpreesionList(List<String> list) {
@@ -100,34 +96,4 @@ public class InfixToSuffixExpression {
         return ls;
     }
 
-
-    /**
-     * 后缀表达式计算值
-     *
-     * @param list，后缀表达式
-     * @return
-     */
-    private static int calc(List<String> list) {
-        Stack<String> stack = new Stack<>();
-        for (String item : list) {
-            if (item.matches("\\d+")) {
-                stack.push(item);
-            } else {
-                int num2 = Integer.parseInt(stack.pop());
-                int num1 = Integer.parseInt(stack.pop());
-                int res = 0;
-                if (item.equals("+")) {
-                    res = num1 + num2;
-                } else if (item.equals("-")) {
-                    res = num1 - num2;
-                } else if (item.equals("*")) {
-                    res = num1 * num2;
-                } else if (item.equals("/")) {
-                    res = num1 / num2;
-                }
-                stack.push("" + res);
-            }
-        }
-        return Integer.parseInt(stack.pop());
-    }
 }
