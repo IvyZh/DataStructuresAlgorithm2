@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * 冒泡排序
  * 案例：
  * 我们举一个具体的案例来说明冒泡法。我们将五个无序的数：3, 9, -1, 10, -2 使用冒泡排序法将其排成一个从小到大的有序数列。
  * <p>
@@ -40,6 +41,16 @@ public class BubbleSort {
         Date end = new Date();
         String date2Str = format.format(end);
         System.out.println("排序后的时间：" + date2Str);
+
+        // 检验排序数组正确性
+        boolean isOk = true;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                isOk = false;
+                break;
+            }
+        }
+        System.out.println("排序验证结果：" + isOk);
 
     }
 

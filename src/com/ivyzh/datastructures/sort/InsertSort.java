@@ -4,27 +4,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
- * 选择排序：
- *
- * 案例：
- * 有一群牛 , 颜值分别是 101, 34, 119, 1 请使用选择排序从低到高进行排序 [101, 34, 119, 1]
+ * 插入排序
  * <p>
- * 规律：
- * 1.	如果有N个待排数据，则需要进行N-1次大循环；
- * 2.	每一轮排序又是一个小循环，第一次是 0~n-1个数中找最小值，第i次是i-1~n-1个数中找最小值
+ * 思想：把n个待排序的元素看成为一个有序表和一个无序表，开始时有序表中只包含一个元素，无序表中包含有n-1个元素，排序过程中每次从无序表中取出第一个元素，
+ * 把它的排序码依次与有序表元素的排序码进行比较，将它插入到有序表中的适当位置，使之成为新的有序表。
  * <p>
  * 8W个数据
- * 排序前的时间：18:13:41
- * 排序后的时间：18:13:45
+ * 排序前的时间：14:43:15
+ * 排序后的时间：14:43:16
  */
-public class SelectorSort {
+public class InsertSort {
     public static void main(String[] args) {
-        System.out.println("~~SelectorSort~~");
-//        int[] arr = {1, 7, 0, 1, 1, 0, 7, 6};
+        System.out.println("~~InsertSort~~");
+//        int[] arr = {3, 1, 9, -1, 10, -2};
 //        System.out.println("排序前：" + Arrays.toString(arr));
 //        sort(arr);
 //        System.out.println("排序后：" + Arrays.toString(arr));
+
 
         // 演示性能测试
         Date start = new Date();
@@ -43,6 +39,7 @@ public class SelectorSort {
         Date end = new Date();
         String date2Str = format.format(end);
         System.out.println("排序后的时间：" + date2Str);
+
         // 检验排序数组正确性
         boolean isOk = true;
         for (int i = 0; i < arr.length - 1; i++) {
@@ -52,28 +49,29 @@ public class SelectorSort {
             }
         }
         System.out.println("排序验证结果：" + isOk);
+
     }
 
+    /**
+     * 插入排序
+     *
+     * @param arr
+     */
     private static void sort(int[] arr) {
-        int minIndex = 0;
-        int temp = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            minIndex = i;//默认最小值的坐标是起始位置
-            for (int j = i + 1; j < arr.length; j++) {
-//                System.out.println("第" + (i + 1) + "轮第" + (j + 1 - i) + "次比较为" + arr[j] + "和" + arr[j + 1] + " " + Arrays.toString(arr));
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j;
-                }
-            }
-//            System.out.println("第" + (i + 1) + "轮排序中最小值小标为" + minIndex);
 
-            if (minIndex != i) {
-                // 交换位置0和minIndex位置对应的值
-                temp = arr[minIndex];
-                arr[minIndex] = arr[i];
-                arr[i] = temp;
+        int insertIndex = 0;
+        int insertValue = arr[1];
+
+        for (int i = 1; i < arr.length; i++) {
+            insertValue = arr[i];
+            insertIndex = i - 1;
+            while (insertIndex >= 0 && insertValue < arr[insertIndex]) {
+                arr[insertIndex + 1] = arr[insertIndex];
+                insertIndex--;
             }
-//                System.out.println("交换之后的数组：" + Arrays.toString(arr));
+            if (i != insertIndex + 1) {
+                arr[insertIndex + 1] = insertValue;//可以优化
+            }
         }
     }
 }
