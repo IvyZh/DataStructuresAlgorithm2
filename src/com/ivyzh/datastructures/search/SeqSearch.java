@@ -1,5 +1,7 @@
 package com.ivyzh.datastructures.search;
 
+import java.util.ArrayList;
+
 /**
  * 线性查找算法
  * <p>
@@ -9,6 +11,36 @@ package com.ivyzh.datastructures.search;
  */
 public class SeqSearch {
     public static void main(String[] args) {
-        int[] arr = {1, 8, 10, 89, 1000, 1234};
+        int[] arr = {1, 8, 10, 89, 1000, 1234, 8};
+
+        int index = find(arr, 8);
+        System.out.println("index = " + index);
+        ArrayList<Integer> list = find2(arr, 118);
+        if (list.size() > 0) {
+            System.out.println("find..." + list);
+        } else {
+            System.out.println("no find");
+        }
+    }
+
+    private static int find(int[] arr, int num) {
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == num) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    private static ArrayList<Integer> find2(int[] arr, int num) {
+        ArrayList<Integer> ints = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == num) {
+                ints.add(i);
+            }
+        }
+        return ints;
     }
 }
