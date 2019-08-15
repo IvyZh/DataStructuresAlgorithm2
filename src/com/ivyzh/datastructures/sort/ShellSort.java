@@ -13,10 +13,16 @@ import java.util.Date;
  * 2000W个数据-交换法
  * 排序前的时间：16:52:18
  * 排序后的时间：16:52:25
+ * 800W个数据-交换法
+ * 排序前的时间：18:20:16
+ * 排序后的时间：18:20:19
  * <p>
  * 2000W个数据-移位法
  * 排序前的时间：16:53:41
  * 排序后的时间：16:53:48
+ * 800W个数据-移位法
+ * 排序前的时间：18:20:44
+ * 排序后的时间：18:20:47
  */
 public class ShellSort {
     public static void main(String[] args) {
@@ -38,7 +44,7 @@ public class ShellSort {
         String date1Str = format.format(start);
         System.out.println("排序前的时间：" + date1Str);
 
-        int num = 20000000;
+        int num = 8000000;
         int[] arr = new int[num];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * num);
