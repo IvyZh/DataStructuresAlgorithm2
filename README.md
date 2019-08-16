@@ -46,4 +46,9 @@
     希尔排序
     快速排序
 16. 哈希表（HashTabDemo）
+
 17. 二叉树（BinaryTree）
+
+18. 顺序存储二叉树（ArrayBinaryTreeDemo）
+
+19. 线索二叉树（ThreadBinaryTree）
