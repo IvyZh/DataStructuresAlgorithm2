@@ -52,3 +52,7 @@
 18. 顺序存储二叉树（ArrayBinaryTreeDemo）
 
 19. 线索二叉树（ThreadBinaryTree）
+
+20. 堆排序（HeadSortDemo）
+
+21. 霍夫曼树（HuffmanTreeDemo）
