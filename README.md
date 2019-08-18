@@ -63,4 +63,4 @@
 
 24. 二叉搜索树（BinarySortTreeDemo）
 
-25. 二叉平衡树（AVLTreeDemo）
+25. 图DFS和BFS（GraphDemo）
