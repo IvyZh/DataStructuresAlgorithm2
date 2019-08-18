@@ -56,3 +56,7 @@
 20. 堆排序（HeadSortDemo）
 
 21. 霍夫曼树（HuffmanTreeDemo）
+
+22. 霍夫曼树编码（HuffmanCodeDemo）
+
+23. 霍夫曼树压缩文件（HuffmanZipFileDemo）
