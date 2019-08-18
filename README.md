@@ -60,3 +60,7 @@
 22. 霍夫曼树编码（HuffmanCodeDemo）
 
 23. 霍夫曼树压缩文件（HuffmanZipFileDemo）
+
+24. 二叉搜索树（BinarySortTreeDemo）
+
+25. 二叉平衡树（AVLTreeDemo）
