@@ -64,3 +64,16 @@
 24. 二叉搜索树（BinarySortTreeDemo）
 
 25. 图DFS和BFS（GraphDemo）
+
+---------十大算法---------
+
+1. 二分查找非递归（BinarySearch）
+2. 分治算法（HanoiTowerDemo）汉诺塔问题
+3. 动态规划算法（KnapsackProblem）背包问题
+5. KMP算法
+6. 贪心算法
+7. 普里姆算法
+8. 克鲁斯卡尔算法
+9. 迪杰斯特拉算法
+10. 弗洛伊德算法
+11. 马踏棋盘算法

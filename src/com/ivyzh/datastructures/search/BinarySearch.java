@@ -1,7 +1,7 @@
 package com.ivyzh.datastructures.search;
 
 /**
- * 二分查找
+ * 二分查找-递归
  */
 public class BinarySearch {
     public static void main(String[] args) {
